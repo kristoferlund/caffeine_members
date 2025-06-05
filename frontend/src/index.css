@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+  /* Windows 95 Color Palette */
+  .bg-win95-desktop {
+    background-color: #008080;
+  }
+  
+  .bg-win95-gray {
+    background-color: #c0c0c0;
+  }
+  
+  .bg-win95-blue {
+    background-color: #000080;
+  }
+  
+  .bg-win95-highlight {
+    background-color: #0000ff;
+    color: white;
+  }
+  
+  .text-win95-blue {
+    color: #000080;
+  }
+  
+  /* Windows 95 Pattern Background */
+  .bg-win95-pattern {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  /* Windows 95 Window Styling */
+  .win95-window {
+    box-shadow: 
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #dfdfdf,
+      inset -2px -2px #808080,
+      inset 2px 2px #ffffff;
+  }
+  
+  /* Windows 95 Raised Border */
+  .border-win95-raised {
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+  }
+  
+  /* Windows 95 Sunken Border */
+  .border-win95-sunken {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+  }
+  
+  /* Windows 95 Title Bar */
+  .win95-title-bar {
+    background: linear-gradient(90deg, #000080 0%, #0000ff 100%);
+    box-shadow: 
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #4040ff;
+  }
+  
+  /* Windows 95 Title Buttons */
+  .win95-title-buttons div {
+    box-shadow: 
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #dfdfdf,
+      inset -2px -2px #808080,
+      inset 2px 2px #ffffff;
+  }
+  
+  /* Windows 95 Button */
+  .win95-button {
+    box-shadow: 
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #dfdfdf,
+      inset -2px -2px #808080,
+      inset 2px 2px #ffffff;
+    transition: all 0.1s ease;
+  }
+  
+  .win95-button:hover {
+    background-color: #d4d0c8;
+  }
+  
+  .win95-button:active {
+    box-shadow: 
+      inset 1px 1px #0a0a0a,
+      inset -1px -1px #dfdfdf,
+      inset 2px 2px #808080,
+      inset -2px -2px #ffffff;
+  }
+  
+  /* Windows 95 Input Fields */
+  input[type="text"], input[type="email"] {
+    box-shadow: 
+      inset 1px 1px #0a0a0a,
+      inset -1px -1px #dfdfdf,
+      inset 2px 2px #808080,
+      inset -2px -2px #ffffff;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus {
+    box-shadow: 
+      inset 1px 1px #0a0a0a,
+      inset -1px -1px #dfdfdf,
+      inset 2px 2px #000080,
+      inset -2px -2px #ffffff;
+  }
+  
+  /* Windows 95 Scrollbar */
+  .win95-scrollbar::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  .win95-scrollbar::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    box-shadow: 
+      inset 1px 1px #0a0a0a,
+      inset -1px -1px #dfdfdf,
+      inset 2px 2px #808080,
+      inset -2px -2px #ffffff;
+  }
+  
+  .win95-scrollbar::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    box-shadow: 
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #dfdfdf,
+      inset -2px -2px #808080,
+      inset 2px 2px #ffffff;
+  }
+  
+  .win95-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #d4d0c8;
+  }
+  
+  /* Windows 95 Loading Animation */
+  .win95-loading-dots {
+    display: inline-flex;
+    gap: 2px;
+  }
+  
+  .win95-loading-dots span {
+    animation: win95-blink 1.4s infinite both;
+  }
+  
+  .win95-loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .win95-loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes win95-blink {
+    0%, 80%, 100% {
+      opacity: 0.3;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+  
+  /* Toast Animation */
+  .animate-in {
+    animation-fill-mode: both;
+  }
+  
+  .slide-in-from-top-2 {
+    animation-name: slide-in-from-top-2;
+  }
+  
+  @keyframes slide-in-from-top-2 {
+    from {
+      transform: translateY(-0.5rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .duration-300 {
+    animation-duration: 300ms;
+  }
+
+  /* Explosion Effect Animations */
+  .animate-flash {
+    animation: flash 0.3s ease-out;
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-explosion-burst {
+    animation: explosion-burst 1s ease-out;
+  }
+
+  @keyframes explosion-burst {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5) rotate(180deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 2s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Particle effects */
+  .animate-pulse {
+    animation: pulse 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+}
